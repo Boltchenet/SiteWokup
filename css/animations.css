@@ -1,0 +1,57 @@
+/* Animations pour les nouvelles sections */
+.split-section,
+.restaurant-photos,
+.reviews {
+    transition: background-position 8s ease-in-out;
+}
+
+.split-section:hover {
+    background-position: center 25%;
+}
+
+.restaurant-photos:hover,
+.reviews:hover {
+    background-position: center 30%;
+}
+
+/* Animations existantes */
+.cta-btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 190, 11, 0.3);
+}
+
+.specialty-card {
+    transition: all 0.5s ease;
+}
+
+.specialty-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.gold-dot {
+    transition: all 0.5s ease;
+}
+
+.footer-text {
+    transition: all 0.5s ease;
+}
+
+.evasion-footer:hover .footer-text {
+    transform: translateY(-10px);
+}
+
+.signature-video:hover {
+    filter: brightness(1.1);
+}
+
+.logo h1 {
+    transition: text-shadow 0.5s ease;
+}
+
+.logo:hover h1 {
+    text-shadow: 0 0 30px rgba(255, 190, 11, 0.8);
+}

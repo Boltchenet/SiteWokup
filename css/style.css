@@ -1,0 +1,472 @@
+:root {
+    --black: #1a1a2e;
+    --black-light: #2a2a3e;
+    --gold: #ffbe0b;
+    --gold-light: #ffd166;
+    --gold-dark: #e6a800;
+    --white: #f8f9fa;
+    --gray: #cccccc;
+    --red-dark: #5e0000;
+    --red-light: #ff4d4d;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/backgroundflower.jpg') center/110% no-repeat;
+    z-index: -2;
+    filter: brightness(0.9);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mix-blend-mode: overlay;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Animation Dragon/S */
+.dragon-entrance {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    height: 200px;
+    z-index: 2;
+    overflow: visible;
+}
+
+.dragon-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.dragon-path {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    filter: 
+        drop-shadow(0 0 5px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 10px rgba(255, 190, 11, 0.9));
+    transform-origin: center;
+}
+
+.logo {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 6rem;
+    color: var(--gold);
+    margin: 0;
+    font-weight: 900;
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 
+        0 0 10px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 190, 11, 0.7);
+    background: transparent;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(10px);
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background: rgba(26, 26, 46, 0.4);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+/* Particules dorées */
+.gold-particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Split Gallery */
+.split-gallery {
+    position: relative;
+    height: 100vh;
+    display: flex;
+}
+
+.split-section {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    transition: background-position 8s ease-in-out;
+}
+
+.split-section.left-blue {
+    background: 
+        linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(42, 42, 62, 0.85) 100%),
+        url('../images/background2.jpg') center/cover no-repeat;
+}
+
+.split-section.right-red {
+    background: 
+        linear-gradient(135deg, rgba(94, 0, 0, 0.85) 0%, rgba(58, 0, 0, 0.85) 100%),
+        url('../images/background3.jpg') center/cover no-repeat;
+}
+
+.split-section:hover {
+    background-position: center 25%;
+}
+
+.lightning-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        var(--gold) 20%, 
+        transparent 40%, 
+        var(--gold) 60%, 
+        transparent 80%, 
+        var(--gold) 100%);
+    transform: translateX(-50%) rotate(15deg);
+    z-index: 2;
+    scaleY: 0;
+}
+
+.split-content h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.split-content h2 span {
+    display: block;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.art-description {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--white);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Restaurant Photos */
+.restaurant-photos {
+    padding: 6rem 2rem;
+    background: 
+        linear-gradient(rgba(42, 42, 62, 0.9), rgba(42, 42, 62, 0.9)),
+        url('../images/background4.jpg') center/cover no-repeat;
+    text-align: center;
+    transition: background-position 8s ease-in-out;
+}
+
+.restaurant-photos:hover {
+    background-position: center 30%;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.photo-item {
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--gold);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.menu-link {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+    color: var(--white);
+    border-bottom-color: var(--white);
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.menu-link:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* Reviews Section */
+.reviews {
+    padding: 6rem 2rem;
+    background: 
+        linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)),
+        url('../images/background5.jpg') center/cover no-repeat;
+    text-align: center;
+    transition: background-position 8s ease-in-out;
+}
+
+.reviews:hover {
+    background-position: center 30%;
+}
+
+.reviews h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 3rem;
+}
+
+.reviews-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--gold);
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.review-author {
+    color: var(--gold-light);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Footer */
+.evasion-footer {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: var(--black-light);
+}
+
+.map-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: url('images/paris-map.jpg') center/cover no-repeat;
+    position: relative;
+    margin-bottom: 3rem;
+    filter: grayscale(100%) contrast(120%);
+    opacity: 0.8;
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+.gold-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px var(--gold);
+    animation: pulse 2s infinite;
+}
+
+.footer-text {
+    font-size: 2.5rem;
+    font-family: 'Noto Serif SC', serif;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    transition: all 0.5s ease;
+}
+
+.evasion-footer:hover .footer-text {
+    transform: translateY(-10px);
+}
+
+.footer-social {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.social-link {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--white);
+}
+
+.footer-address {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-top: 1rem;
+}
+
+.gold-text {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Animations Keyframes */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 190, 11, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 190, 11, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 190, 11, 0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 4rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+    
+    .split-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .split-content h2 span {
+        font-size: 1.5rem;
+    }
+    
+    .art-description {
+        font-size: 1.2rem;
+    }
+    
+    .photos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 3rem;
+    }
+    
+    .split-gallery {
+        flex-direction: column;
+    }
+    
+    .split-section {
+        height: 50vh;
+    }
+    
+    .lightning-divider {
+        width: 100%;
+        height: 2px;
+        transform: rotate(0deg);
+        background: linear-gradient(to right, 
+            transparent 0%, 
+            var(--gold) 20%, 
+            transparent 40%, 
+            var(--gold) 60%, 
+            transparent 80%, 
+            var(--gold) 100%);
+    }
+    
+    .dragon-entrance {
+        top: 15%;
+        height: 150px;
+    }
+}
