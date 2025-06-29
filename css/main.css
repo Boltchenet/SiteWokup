@@ -1,0 +1,739 @@
+/* Variables et Base */
+:root {
+    --gold: #D4AF37;
+    --red: #8B0000;
+    --blue: #1E3A8A;
+    --dark: #0A0A0A;
+    --light: #F8F8F8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--light);
+    background: var(--dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Nouveau header transparent en haut */
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Écran d'accueil */
+.entrance {
+    background: url('../assets/images/restauback.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.5) 0%, rgba(30, 30, 30, 0.5) 100%);
+}
+
+.luxury-header {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.main-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 6rem;
+    color: var(--gold);
+    letter-spacing: 0.5rem;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.animate-logo {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    color: var(--light);
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out 0.3s;
+}
+
+.animate-slogan {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gold-bar {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin-bottom: 1rem;
+}
+
+.scroll-hint p {
+    color: var(--gold);
+    letter-spacing: 0.1rem;
+    font-size: 0.9rem;
+}
+
+/* Navigation */
+.nav-button {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--light);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-button:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Section Combinée */
+.combined-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.diagonal-split {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    height: 100%;
+}
+
+.specialties-side, .fondue-side {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.diagonal-bar {
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom right,
+        transparent 0%,
+        transparent 20%,
+        var(--gold) 50%,
+        transparent 80%,
+        transparent 100%
+    );
+    transform: rotate(15deg);
+    margin: 0 -1.5px;
+}
+
+/* Disposition diagonale */
+.diagonal-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.diagonal-layout .specialty-card:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(-3deg);
+}
+
+.diagonal-layout .specialty-card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    transform: rotate(2deg);
+}
+
+.diagonal-layout .specialty-card:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+    transform: rotate(1deg);
+    margin-left: 3rem;
+}
+
+/* Cartes spécialités */
+.specialty-card {
+    position: relative;
+    transition: all 0.5s ease;
+    margin-bottom: 2rem;
+}
+
+.specialty-card:hover {
+    transform: translateY(-10px) rotate(0deg) !important;
+}
+
+.dish-frame {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dish-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.specialty-card:hover .dish-frame img {
+    transform: scale(1.05);
+}
+
+.specialty-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--light);
+    font-weight: 500;
+}
+
+/* Fondue - Cadre vertical */
+.fondue-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    height: 500px;
+    width: 60%;
+    margin: 2rem auto;
+    border: 1px solid var(--gold);
+}
+
+.fondue-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+    .fondue-card {
+        width: 70%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fondue-card {
+        width: 80%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fondue-card {
+        width: 90%;
+        height: 350px;
+    }
+}
+
+.fondue-card:hover .fondue-image {
+    transform: scale(1.03);
+}
+
+/* Menu Midi */
+.lunch-menu {
+    background: url('../assets/menu-bg.jpg') center/cover;
+    position: relative;
+}
+
+.lunch-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.85);
+}
+
+.menu-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.menu-formula {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    border-top: 2px solid var(--gold);
+    margin: 0 15px;
+}
+
+/* Styles pour les photos du menu midi */
+.menu-photo {
+    position: relative;
+    min-width: 350px;
+    max-width: 450px;
+    height: 300px;
+    margin: 2rem;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    border-top: 2px solid var(--gold);
+    overflow: hidden;
+}
+
+.menu-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-photo:hover img {
+    transform: scale(1.05);
+}
+
+.menu-photo.tilted-up {
+    transform: rotate(5deg) scale(1.1);
+    z-index: 2;
+}
+
+.menu-photo.tilted-down {
+    transform: rotate(-8deg) scale(0.9);
+    z-index: 1;
+}
+
+.menu-photo.normal {
+    transform: rotate(2deg) scale(1.2);
+    z-index: 3;
+}
+
+.tilted-up {
+    transform: rotate(3deg);
+}
+
+.tilted-down {
+    transform: rotate(-3deg);
+}
+
+.menu-formula:hover, .menu-photo:hover {
+    transform: translateY(-5px) rotate(0deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.formula-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.formula-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: var(--light);
+    font-weight: 500;
+}
+
+.price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* Contact Premium */
+.luxury-contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    padding: 0 4rem;
+}
+
+.contact-map-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.map-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.map-container {
+    width: 90%;
+    height: 90%;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Style iPad pour la map */
+.ipad-frame {
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-radius: 40px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.ipad-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ipad-home-button {
+    width: 50px;
+    height: 50px;
+    background: #444;
+    border-radius: 50%;
+    margin: 20px auto 0;
+    border: 2px solid #555;
+}
+
+#premium-map {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(30%) sepia(20%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    transition: all 0.5s ease;
+}
+
+#premium-map:hover {
+    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Effet de vignette sur les images */
+.dish-frame::after, .fondue-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+}
+
+.contact-info-panel {
+    background: rgba(20, 20, 20, 0.95);
+    padding: 4rem;
+    border-left: 1px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+}
+
+.contact-info-panel h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--light);
+    margin-bottom: 2rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.contact-info-panel h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.gold-bg {
+    background: var(--gold);
+    color: #000;
+}
+
+.red-bg {
+    background: var(--red);
+    color: #fff;
+}
+
+.allergenes-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.allergenes-link:hover {
+    color: var(--gold);
+}
+
+.phone-link, .instagram-link {
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.phone-link:hover, .instagram-link:hover {
+    color: var(--gold);
+}
+
+/* Titres de section */
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: var(--light);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.section-title h2 span {
+    color: var(--gold);
+}
+
+.title-decoration {
+    width: 100px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto;
+    position: relative;
+}
+
+.title-decoration::before,
+.title-decoration::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    top: -3px;
+}
+
+.title-decoration::before {
+    left: -15px;
+}
+
+.title-decoration::after {
+    right: -15px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .diagonal-split {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .diagonal-bar {
+        width: 80%;
+        height: 2px;
+        margin: 2rem auto;
+        transform: rotate(0deg);
+    }
+    
+    .specialties-side, .fondue-side {
+        padding: 2rem;
+    }
+    
+    .fondue-card {
+        width: 90%;
+    }
+    
+    .luxury-contact-container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    
+    .contact-map-wrapper, .contact-info-panel {
+        width: 100%;
+    }
+    
+    .contact-info-panel {
+        border-left: none;
+        border-top: 1px solid var(--gold);
+        padding: 2rem;
+    }
+
+    .menu-formula, .menu-photo {
+        margin: 15px 0;
+    }
+    
+    .tilted-up, .tilted-down, .normal {
+        transform: rotate(0deg) scale(1) !important;
+    }
+
+    .header-nav {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-logo {
+        font-size: 4rem;
+    }
+    
+    .diagonal-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .diagonal-layout .specialty-card {
+        transform: rotate(0deg) !important;
+        margin-left: 0 !important;
+    }
+    
+    .menu-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-formula, .menu-photo {
+        max-width: 450px;
+        width: 100%;
+    }
+    
+    .fondue-card {
+        width: 95%;
+        height: 300px;
+    }
+    
+    .map-container {
+        width: 95%;
+        height: 60%;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-info-panel {
+        padding: 1.5rem;
+    }
+    
+    .main-logo {
+        font-size: 3rem;
+    }
+    
+    .slogan {
+        font-size: 1.2rem;
+    }
+    
+    .dish-frame {
+        height: 250px;
+    }
+    
+    .fondue-card {
+        width: 100%;
+        height: 250px;
+    }
+
+    .header-nav {
+        padding: 0.5rem 0;
+    }
+
+    .menu-photo {
+        min-width: 280px;
+        height: 250px;
+    }
+}
