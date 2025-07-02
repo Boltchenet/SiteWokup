@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOKUP | Restaurant Asiatique Luxe</title>
+    <title>WOKUP | Restaurant Asiatique</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Nouveau header fixe -->
     <nav class="header-nav">
         <a href="#specialties" class="nav-button">Nos Plats</a>
         <a href="https://menu-wokup.vercel.app/" class="nav-button">Notre Menu</a>
         <a href="#contact" class="nav-button">Contact</a>
     </nav>
 
-    <!-- Écran d'accueil -->
     <section class="fullscreen entrance">
         <div class="color-overlay"></div>
         <div class="luxury-header">
@@ -29,10 +27,8 @@
         </div>
     </section>
 
-    <!-- Section Combinée Spécialités + Fondue -->
     <section class="fullscreen combined-section" id="specialties">
         <div class="diagonal-split">
-            <!-- Partie gauche - Spécialités -->
             <div class="specialties-side">
                 <div class="section-title">
                     <h2>Nos Spécialités</h2>
@@ -42,31 +38,26 @@
                 <div class="specialty-grid diagonal-layout">
                     <div class="specialty-card">
                         <div class="dish-frame">
-                            <img src="assets/images/aigredouce.jpg" alt="Spécialité 1">
+                            <img src="assets/images/aigredouce.jpg" alt="Poulet aigre-doux">
                         </div>
-                        <h3></h3>
                     </div>
                     
                     <div class="specialty-card">
                         <div class="dish-frame">
-                            <img src="assets/images/intestin.jpg" alt="Spécialité 2">
+                            <img src="assets/images/intestin.jpg" alt="Intestins grillés">
                         </div>
-                        <h3></h3>
                     </div>
                     
-                    <div class="specialty-card">
+                    <div class="specialty-card" style="margin-top: -30px;">
                         <div class="dish-frame">
-                            <img src="assets/images/pouletfrit.jpg" alt="Spécialité 3">
+                            <img src="assets/images/pouletfrit.jpg" alt="Poulet croustillant">
                         </div>
-                        <h3></h3>
                     </div>
                 </div>
             </div>
             
-            <!-- Barre diagonale de séparation -->
             <div class="diagonal-bar"></div>
             
-            <!-- Partie droite - Fondue -->
             <div class="fondue-side">
                 <div class="section-title">
                     <h2>Fondues Chinoises</h2>
@@ -80,64 +71,56 @@
         </div>
     </section>
 
-    <!-- Menu Midi -->
     <section class="fullscreen lunch-menu">
-        <div class="section-title">
-            <h2>Menu <span>Midi</span></h2>
-            <div class="title-decoration"></div>
-        </div>
-        
-        <div class="menu-options">
-            <!-- Formule 1 -->
-            <div class="menu-formula tilted-up">
-                <div class="formula-header">
-                    <h3>Entrée + Plat</h3>
-                    <div class="price">13.80€</div>
-                </div>
+        <div class="menu-overlay"></div>
+        <div class="menu-container">
+            <div class="section-title">
+                <h2>Menu <span>Midi</span></h2>
+                <div class="title-decoration"></div>
             </div>
             
-            <!-- Formule 2 -->
-            <div class="menu-formula tilted-down">
-                <div class="formula-header">
-                    <h3>Plat + Dessert</h3>
-                    <div class="price">13.80€</div>
+            <div class="modern-menu-grid">
+                <div class="formula-card">
+                    <div class="formula-content">
+                        <h3>Entrée + Plat</h3>
+                        <div class="price-tag">13,80€</div>
+                    </div>
+                    <div class="formula-image" style="background-image: url('assets/images/photo1.jpg');"></div>
                 </div>
-            </div>
-            
-            <!-- Formule 3 -->
-            <div class="menu-formula tilted-up">
-                <div class="formula-header">
-                    <h3>Formule Complète</h3>
-                    <div class="price">16.80€</div>
+                
+                <div class="formula-card highlight">
+                    <div class="formula-content">
+                        <h3>Entrée + Plat + Dessert</h3>
+                        <div class="price-tag">16,80€</div>
+                    </div>
+                    <div class="formula-image" style="background-image: url('assets/images/photo2.jpg');"></div>
                 </div>
-            </div>
-
-            <!-- Photo 1 -->
-            <div class="menu-photo tilted-up">
-                <img src="assets/images/photo1.jpg" alt="Photo 1">
-            </div>
-
-            <!-- Photo 2 -->
-            <div class="menu-photo normal">
-                <img src="assets/images/photo2.jpg" alt="Photo 2">
-            </div>
-
-            <!-- Photo 3 -->
-            <div class="menu-photo tilted-down">
-                <img src="assets/images/photo3.jpg" alt="Photo 3">
+                
+                <div class="formula-card">
+                    <div class="formula-content">
+                        <h3>Plat + Dessert</h3>
+                        <div class="price-tag">13,80€</div>
+                    </div>
+                    <div class="formula-image" style="background-image: url('assets/images/photo3.jpg');"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
     <section class="fullscreen contact-section" id="contact">
         <div class="luxury-contact-container">
             <div class="contact-map-wrapper">
-                <a href="https://www.google.com/maps/place/67+Rue+de+Provence,+75009+Paris" target="_blank" class="map-link">
+                <a href="https://www.google.com/maps/place/Restaurant+WOKUP/@48.873815,2.332450,17z" target="_blank" class="map-link">
                     <div class="map-container">
                         <div class="ipad-frame">
                             <div class="ipad-screen">
-                                <iframe id="premium-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.396847576145!2d2.335025315674805!3d48.87381497928893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a0a3f11d7%3A0x1b3b3b3b3b3b3b3b!2s67%20Rue%20de%20Provence%2C%2075009%20Paris!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe id="premium-map" 
+                                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.396847576145!2d2.332450315674805!3d48.87381497928893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a0a3f11d7%3A0x8e2a2d5f0e9d5b1f!2sRestaurant%20WOKUP!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
+                                  width="100%" 
+                                  height="100%" 
+                                  style="border:0;" 
+                                  allowfullscreen="" 
+                                  loading="lazy"></iframe>
                             </div>
                             <div class="ipad-home-button"></div>
                         </div>
@@ -149,12 +132,12 @@
                 <h2>Informations</h2>
                 
                 <div class="info-line">
-                    <div class="icon-box gold-bg">📍</div>
-                    <p>67 Rue de Provence<br>75009 Paris</p>
+                    <div class="icon-box gold-bg"><i class="fas fa-map-marker-alt"></i></div>
+                    <p>Rue de Provence<br>75009 Paris</p>
                 </div>
                 
                 <div class="info-line">
-                    <div class="icon-box gold-bg">📞</div>
+                    <div class="icon-box gold-bg"><i class="fas fa-phone"></i></div>
                     <a href="tel:0952270348" class="phone-link">09 52 27 03 48</a>
                 </div>
                 
@@ -164,7 +147,7 @@
                 </div>
                 
                 <div class="info-line">
-                    <div class="icon-box red-bg">⚠️</div>
+                    <div class="icon-box red-bg"><i class="fas fa-exclamation-triangle"></i></div>
                     <a href="assets/menu-allergenes.pdf" class="allergenes-link" target="_blank">Fiche allergènes</a>
                 </div>
             </div>

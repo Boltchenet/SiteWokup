@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Animation d'entrée du logo et slogan
+    // Animation d'entrée
     setTimeout(() => {
         document.querySelector('.main-logo').classList.add('animate-logo');
         document.querySelector('.slogan').classList.add('animate-slogan');
     }, 500);
 
-    // Animation des éléments au scroll
+    // Animation au scroll
     const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.specialty-card, .fondue-card, .menu-formula, .menu-photo');
+        const elements = document.querySelectorAll('.specialty-card, .fondue-card, .formula-card');
         
         elements.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Initial state
-    document.querySelectorAll('.specialty-card, .fondue-card, .menu-formula, .menu-photo').forEach(el => {
+    // Initialisation des animations
+    document.querySelectorAll('.specialty-card, .fondue-card, .formula-card').forEach(el => {
         el.style.opacity = '0';
         if (el.classList.contains('specialty-card')) {
             const currentTransform = window.getComputedStyle(el).getPropertyValue('transform');
@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.8s ease-out';
     });
 
-    // Écouteur de scroll
+    // Écouteur d'événement pour le scroll
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Pour les éléments déjà visibles
+    animateOnScroll();
 
-    // Effet de zoom sur les images au survol
-    document.querySelectorAll('.dish-frame img, .fondue-image, .menu-photo img').forEach(img => {
+    // Effet de zoom au survol des images
+    document.querySelectorAll('.dish-frame img, .fondue-image, .formula-image').forEach(img => {
         img.addEventListener('mousemove', (e) => {
             const rect = e.target.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width * 100;
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animation pour le header au scroll
+    // Comportement de la navbar au scroll
     const header = document.querySelector('.header-nav');
     let lastScroll = 0;
 
@@ -73,5 +73,33 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.3)';
         }
         lastScroll = currentScroll;
+    });
+
+    // Effet de survol sur les cartes menu
+    document.querySelectorAll('.formula-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            if (!card.classList.contains('highlight')) {
+                card.style.transform = 'translateY(-10px)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            if (card.classList.contains('highlight')) {
+                card.style.transform = 'scale(1.02)';
+            } else {
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Animation des images de formule au survol
+    document.querySelectorAll('.formula-image').forEach(image => {
+        image.addEventListener('mouseenter', () => {
+            image.style.transform = 'scale(1.05)';
+        });
+        
+        image.addEventListener('mouseleave', () => {
+            image.style.transform = 'scale(1)';
+        });
     });
 });
