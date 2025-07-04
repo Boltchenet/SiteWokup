@@ -78,17 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Effet de survol sur les cartes menu
     document.querySelectorAll('.formula-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
-            if (!card.classList.contains('highlight')) {
-                card.style.transform = 'translateY(-10px)';
-            }
+            card.style.transform = 'translateY(-10px)';
         });
         
         card.addEventListener('mouseleave', () => {
-            if (card.classList.contains('highlight')) {
-                card.style.transform = 'scale(1.02)';
-            } else {
-                card.style.transform = 'translateY(0)';
-            }
+            card.style.transform = 'translateY(0)';
         });
     });
 

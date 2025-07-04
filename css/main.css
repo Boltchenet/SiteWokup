@@ -1,9 +1,15 @@
-/* Variables et Base */
 :root {
-    --gold: #D4AF37;
-    --dark: #0A0A0A;
-    --light: #F8F8F8;
-    --red: #8B0000;
+    --red: #e63946;
+    --gold: #ffbe0b;
+    --gold-light: #ffd166;
+    --blue: #3a86ff;
+    --purple: #8338ec;
+    --dark: #1a1a2e;
+    --dark-alt: #16213e;
+    --light: #f8f9fa;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(255, 190, 11, 0.2);
 }
 
 * {
@@ -13,7 +19,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     color: var(--light);
     background: var(--dark);
     overflow-x: hidden;
@@ -37,10 +43,10 @@ body {
     justify-content: center;
     gap: 2rem;
     z-index: 100;
-    background: rgba(10, 10, 10, 0.3);
+    background: rgba(26, 26, 46, 0.3);
     backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 190, 11, 0.2);
+    transition: var(--transition);
 }
 
 .entrance {
@@ -57,7 +63,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.5) 0%, rgba(30, 30, 30, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.5) 0%, rgba(30, 30, 30, 0.5) 100%);
 }
 
 .luxury-header {
@@ -67,11 +73,11 @@ body {
 }
 
 .main-logo {
-    font-family: 'Cinzel', serif;
+    font-family: 'Noto Serif SC', serif;
     font-size: 6rem;
     color: var(--gold);
     letter-spacing: 0.5rem;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    text-shadow: 0 0 20px rgba(255, 190, 11, 0.5);
     margin-bottom: 1rem;
     opacity: 0;
     transform: translateY(30px);
@@ -84,7 +90,7 @@ body {
 }
 
 .slogan {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
     color: var(--light);
@@ -115,7 +121,7 @@ body {
 .scroll-hint p {
     color: var(--gold);
     letter-spacing: 0.1rem;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .nav-button {
@@ -124,19 +130,19 @@ body {
     border: 1px solid var(--gold);
     color: var(--light);
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     border-radius: 4px;
 }
 
 .nav-button:hover {
-    background: rgba(212, 175, 55, 0.2);
+    background: rgba(255, 190, 11, 0.2);
     transform: translateY(-3px);
 }
 
 .combined-section {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
 }
 
 .diagonal-split {
@@ -195,12 +201,13 @@ body {
 
 .specialty-card {
     position: relative;
-    transition: all 0.5s ease;
+    transition: var(--transition);
     margin-bottom: 2rem;
 }
 
 .specialty-card:hover {
     transform: translateY(-10px) rotate(0deg) !important;
+    box-shadow: var(--shadow-hover);
 }
 
 .dish-frame {
@@ -210,14 +217,15 @@ body {
     overflow: hidden;
     margin-bottom: 1.5rem;
     border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 190, 11, 0.3);
 }
 
 .dish-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: var(--transition);
 }
 
 .specialty-card:hover .dish-frame img {
@@ -228,20 +236,20 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 4px;
-    height: 550px;
-    width: 66%;
+    height: 700px;
+    width: 85%;
     margin: 2rem auto;
-    border: 1px solid var(--gold);
+    border: 1px solid rgba(255, 190, 11, 0.3);
 }
 
 .fondue-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 15%;
     border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
 .lunch-menu {
@@ -258,7 +266,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 10, 0.85);
+    background: rgba(26, 26, 46, 0.85);
     z-index: 1;
 }
 
@@ -268,36 +276,34 @@ body {
     width: 90%;
     max-width: 1200px;
     padding: 4rem 2rem;
+    background: rgba(26, 26, 46, 0.95);
+    border: 2px solid var(--gold);
 }
 
 .modern-menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin: 3rem 0;
+    justify-content: center;
 }
 
 .formula-card {
-    background: rgba(20, 20, 20, 0.9);
+    background: rgba(26, 26, 46, 0.9);
     border-radius: 8px;
     overflow: hidden;
     position: relative;
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    box-shadow: var(--shadow);
     border-top: 3px solid var(--gold);
-}
-
-.formula-card.highlight {
-    transform: scale(1.02);
-    border-top: 3px solid var(--red);
 }
 
 .formula-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+    box-shadow: var(--shadow-hover);
 }
 
 .formula-content {
@@ -310,25 +316,14 @@ body {
 }
 
 .formula-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Noto Serif SC', serif;
     color: var(--gold);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    position: relative;
-}
-
-.formula-content h3::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: var(--gold);
 }
 
 .price-tag {
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(255, 190, 11, 0.1);
     color: var(--gold);
     padding: 0.8rem;
     text-align: center;
@@ -353,168 +348,74 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(26, 26, 46, 0.8) 0%, transparent 100%);
+}
+
+.contact-section {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-alt) 100%);
 }
 
 .luxury-contact-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100%;
     padding: 0 4rem;
 }
 
 .contact-map-wrapper {
     position: relative;
-    overflow: hidden;
+    width: 50%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
-}
-
-.map-link {
-    display: block;
-    width: 100%;
-    height: 100%;
+    padding: 2rem;
 }
 
 .map-container {
-    width: 90%;
+    width: 100%;
     height: 500px;
-    border: 2px solid var(--gold);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.ipad-frame {
-    width: 100%;
-    height: 100%;
-    background: #333;
-    border-radius: 40px;
-    padding: 25px;
+    box-shadow: var(--shadow);
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 190, 11, 0.3);
 }
 
-.ipad-screen {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.ipad-home-button {
-    width: 70px;
-    height: 70px;
-    background: #444;
-    border-radius: 50%;
-    margin: 20px auto 0;
-    border: 2px solid #555;
-}
-
-#premium-map {
-    width: 100%;
-    height: 100%;
-    filter: grayscale(30%) sepia(20%) hue-rotate(180deg) brightness(90%) contrast(90%);
-    transition: all 0.5s ease;
-}
-
-#premium-map:hover {
-    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-}
-
-.dish-frame::after, .fondue-image::after {
+.map-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
     pointer-events: none;
+    z-index: 2;
+    margin: 10px;
+}
+
+#premium-map {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(30%) sepia(20%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    transition: var(--transition);
+}
+
+#premium-map:hover {
+    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
 .contact-info-panel {
-    background: rgba(20, 20, 20, 0.95);
+    background: rgba(26, 26, 46, 0.95);
     padding: 4rem;
-    border-left: 1px solid var(--gold);
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-    width: 50%;
-}
-
-.contact-info-panel h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    color: var(--light);
-    margin-bottom: 2rem;
-    position: relative;
-    font-weight: 500;
-}
-
-.contact-info-panel h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100px;
-    height: 2px;
-    background: var(--gold);
-}
-
-.info-line {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    gap: 1rem;
-}
-
-.icon-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-}
-
-.gold-bg {
-    background: var(--gold);
-    color: #000;
-}
-
-.red-bg {
-    background: var(--red);
-    color: #fff;
-}
-
-.allergenes-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var(--light);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.allergenes-link:hover {
-    color: var(--gold);
-}
-
-.phone-link, .instagram-link {
-    color: var(--light);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.phone-link:hover, .instagram-link:hover {
-    color: var(--gold);
+    border-left: 1px solid rgba(255, 190, 11, 0.3);
 }
 
 .section-title {
@@ -525,7 +426,7 @@ body {
 }
 
 .section-title h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Serif SC', serif;
     font-size: 2.5rem;
     color: var(--light);
     margin-bottom: 1rem;
@@ -562,6 +463,81 @@ body {
     right: -15px;
 }
 
+.info-container {
+    background: rgba(26, 26, 46, 0.7);
+    border-radius: 8px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 190, 11, 0.2);
+    box-shadow: var(--shadow);
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(26, 26, 46, 0.5);
+    border-radius: 4px;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.info-line:hover {
+    background: rgba(255, 190, 11, 0.05);
+    border-left: 3px solid var(--gold);
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.gold-bg {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.red-bg {
+    background: var(--red);
+    color: var(--light);
+}
+
+.info-link {
+    color: var(--light);
+    text-decoration: none;
+    transition: var(--transition);
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-link:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.download-icon {
+    margin-left: 0.5rem;
+}
+
+.dish-frame::after, .fondue-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+}
+
 @media (max-width: 1024px) {
     .diagonal-split {
         grid-template-columns: 1fr;
@@ -581,7 +557,7 @@ body {
     
     .fondue-card {
         width: 90%;
-        height: 500px;
+        height: 600px;
     }
     
     .luxury-contact-container {
@@ -615,11 +591,6 @@ body {
     .map-container {
         height: 400px;
     }
-
-    .ipad-home-button {
-        width: 60px;
-        height: 60px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -646,7 +617,7 @@ body {
     
     .fondue-card {
         width: 95%;
-        height: 450px;
+        height: 500px;
     }
     
     .map-container {
@@ -658,11 +629,6 @@ body {
         flex-direction: column;
         gap: 0.5rem;
         padding: 0.5rem 0;
-    }
-
-    .ipad-home-button {
-        width: 55px;
-        height: 55px;
     }
 }
 
@@ -706,10 +672,5 @@ body {
 
     .map-container {
         height: 300px;
-    }
-
-    .ipad-home-button {
-        width: 50px;
-        height: 50px;
     }
 }

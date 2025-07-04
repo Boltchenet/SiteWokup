@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOKUP | Restaurant Asiatique</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <nav class="header-nav">
-        <a href="#specialties" class="nav-button">Nos Plats</a>
+        <a href="#specialties" class="nav-button">Nos Spécialités</a>
         <a href="https://menu-wokup.vercel.app/" class="nav-button">Notre Menu</a>
         <a href="#contact" class="nav-button">Contact</a>
     </nav>
@@ -82,24 +82,16 @@
             <div class="modern-menu-grid">
                 <div class="formula-card">
                     <div class="formula-content">
-                        <h3>Entrée + Plat</h3>
+                        <h3>Entrée + Plat <span class="formula-or">OU</span> Plat + Dessert</h3>
                         <div class="price-tag">13,80€</div>
                     </div>
                     <div class="formula-image" style="background-image: url('assets/images/photo1.jpg');"></div>
                 </div>
                 
-                <div class="formula-card highlight">
-                    <div class="formula-content">
-                        <h3>Entrée + Plat + Dessert</h3>
-                        <div class="price-tag">16,80€</div>
-                    </div>
-                    <div class="formula-image" style="background-image: url('assets/images/photo2.jpg');"></div>
-                </div>
-                
                 <div class="formula-card">
                     <div class="formula-content">
-                        <h3>Plat + Dessert</h3>
-                        <div class="price-tag">13,80€</div>
+                        <h3>Entrée + Plat + Dessert</h3>
+                        <div class="price-tag">16,90€</div>
                     </div>
                     <div class="formula-image" style="background-image: url('assets/images/photo3.jpg');"></div>
                 </div>
@@ -110,45 +102,49 @@
     <section class="fullscreen contact-section" id="contact">
         <div class="luxury-contact-container">
             <div class="contact-map-wrapper">
-                <a href="https://www.google.com/maps/place/Restaurant+WOKUP/@48.873815,2.332450,17z" target="_blank" class="map-link">
-                    <div class="map-container">
-                        <div class="ipad-frame">
-                            <div class="ipad-screen">
-                                <iframe id="premium-map" 
-                                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.396847576145!2d2.332450315674805!3d48.87381497928893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a0a3f11d7%3A0x8e2a2d5f0e9d5b1f!2sRestaurant%20WOKUP!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
-                                  width="100%" 
-                                  height="100%" 
-                                  style="border:0;" 
-                                  allowfullscreen="" 
-                                  loading="lazy"></iframe>
-                            </div>
-                            <div class="ipad-home-button"></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="map-container">
+                    <iframe id="premium-map" 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.396847576145!2d2.332450315674805!3d48.87381497928893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a0a3f11d7%3A0x8e2a2d5f0e9d5b1f!2sRestaurant%20WOKUP!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
+                      width="100%" 
+                      height="100%" 
+                      style="border:0;" 
+                      allowfullscreen="" 
+                      loading="lazy"></iframe>
+                </div>
             </div>
             
             <div class="contact-info-panel">
-                <h2>Informations</h2>
-                
-                <div class="info-line">
-                    <div class="icon-box gold-bg"><i class="fas fa-map-marker-alt"></i></div>
-                    <p>Rue de Provence<br>75009 Paris</p>
+                <div class="section-title">
+                    <h2>Informations</h2>
+                    <div class="title-decoration"></div>
                 </div>
-                
-                <div class="info-line">
-                    <div class="icon-box gold-bg"><i class="fas fa-phone"></i></div>
-                    <a href="tel:0952270348" class="phone-link">09 52 27 03 48</a>
-                </div>
-                
-                <div class="info-line">
-                    <div class="icon-box gold-bg"><i class="fab fa-instagram"></i></div>
-                    <a href="https://instagram.com/wokup_paris" target="_blank" class="instagram-link">@wokup_paris</a>
-                </div>
-                
-                <div class="info-line">
-                    <div class="icon-box red-bg"><i class="fas fa-exclamation-triangle"></i></div>
-                    <a href="assets/menu-allergenes.pdf" class="allergenes-link" target="_blank">Fiche allergènes</a>
+                <div class="info-container">
+                    <div class="info-line">
+                        <div class="icon-box gold-bg"><i class="fas fa-map-marker-alt"></i></div>
+                        <a href="https://www.google.com/maps/place/Restaurant+WOKUP/@48.873815,2.332450,17z" 
+                           target="_blank" 
+                           class="info-link">
+                            Rue de Provence<br>75009 Paris
+                        </a>
+                    </div>
+                    
+                    <div class="info-line">
+                        <div class="icon-box gold-bg"><i class="fas fa-phone"></i></div>
+                        <a href="tel:0952270348" class="info-link">09 52 27 03 48</a>
+                    </div>
+                    
+                    <div class="info-line">
+                        <div class="icon-box gold-bg"><i class="fab fa-instagram"></i></div>
+                        <a href="https://instagram.com/wokup_paris" target="_blank" class="info-link">@wokup_paris</a>
+                    </div>
+                    
+                    <div class="info-line">
+                        <div class="icon-box red-bg"><i class="fas fa-exclamation-triangle"></i></div>
+                        <a href="assets/menu-allergenes.pdf" class="info-link" target="_blank">
+                            <span>Fiche allergènes</span>
+                            <i class="fas fa-download download-icon"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
