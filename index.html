@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOKUP | Restaurant Asiatique</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <nav class="header-nav">
-        <a href="#specialties" class="nav-button">Nos Spécialités</a>
-        <a href="https://menu-wokup.vercel.app/" class="nav-button">Notre Menu</a>
-        <a href="#contact" class="nav-button">Contact</a>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="#specialties" class="nav-button">Nos Spécialités</a>
+            <a href="https://menu-wokup.vercel.app/" class="nav-button">Notre Menu</a>
+            <a href="#contact" class="nav-button">Contact</a>
+        </div>
     </nav>
 
     <section class="fullscreen entrance">
         <div class="color-overlay"></div>
         <div class="luxury-header">
-            <h1 class="main-logo animate-logo">WOKUP</h1>
-            <p class="slogan animate-slogan">Restaurant Asiatique</p>
+            <h1 class="main-logo">WOKUP</h1>
+            <p class="slogan">Restaurant Asiatique</p>
             <div class="scroll-hint">
                 <div class="gold-bar"></div>
                 <p>Paris 75009</p>
@@ -48,7 +55,7 @@
                         </div>
                     </div>
                     
-                    <div class="specialty-card" style="margin-top: -30px;">
+                    <div class="specialty-card">
                         <div class="dish-frame">
                             <img src="assets/images/pouletfrit.jpg" alt="Poulet croustillant">
                         </div>
@@ -101,18 +108,6 @@
 
     <section class="fullscreen contact-section" id="contact">
         <div class="luxury-contact-container">
-            <div class="contact-map-wrapper">
-                <div class="map-container">
-                    <iframe id="premium-map" 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.396847576145!2d2.332450315674805!3d48.87381497928893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a0a3f11d7%3A0x8e2a2d5f0e9d5b1f!2sRestaurant%20WOKUP!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
-                      width="100%" 
-                      height="100%" 
-                      style="border:0;" 
-                      allowfullscreen="" 
-                      loading="lazy"></iframe>
-                </div>
-            </div>
-            
             <div class="contact-info-panel">
                 <div class="section-title">
                     <h2>Informations</h2>
@@ -145,6 +140,18 @@
                             <i class="fas fa-download download-icon"></i>
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <div class="contact-map-wrapper">
+                <div class="map-container">
+                    <iframe id="premium-map" 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.396847576145!2d2.332450315674805!3d48.87381497928893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a0a3f11d7%3A0x8e2a2d5f0e9d5b1f!2sRestaurant%20WOKUP!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
+                      width="100%" 
+                      height="100%" 
+                      style="border:0;" 
+                      allowfullscreen="" 
+                      loading="lazy"></iframe>
                 </div>
             </div>
         </div>

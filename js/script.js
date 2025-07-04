@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        document.body.classList.toggle('nav-open');
+        if (document.body.classList.contains('nav-open')) {
+            navLinks.style.transform = 'translateY(0)';
+        } else {
+            navLinks.style.transform = 'translateY(-150%)';
+        }
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-button').forEach(link => {
+        link.addEventListener('click', () => {
+            document.body.classList.remove('nav-open');
+            navLinks.style.transform = 'translateY(-150%)';
+        });
+    });
+
     // Animation d'entrée
     setTimeout(() => {
         document.querySelector('.main-logo').classList.add('animate-logo');
